@@ -1,0 +1,4 @@
+INSERT INTO customers (CUSTOMER_NUMBER, NAME , LAST_NAME , SESSION , PASSWORD, EMAIL, STATUS, CREATION) VALUES ('00000001', 'Champi', 'Man', false, 'password', 'champi@correo.com', 'A', '2022-01-18');
+INSERT INTO customers (CUSTOMER_NUMBER, NAME , LAST_NAME , SESSION , PASSWORD, EMAIL, STATUS, CREATION) VALUES ('00000002', 'Juan', 'perez', false, 'pass', 'juan@correo.com', 'B', '2022-01-18');
+INSERT INTO customers (CUSTOMER_NUMBER, NAME , LAST_NAME , SESSION , PASSWORD, EMAIL, STATUS, CREATION) VALUES ('00000003', 'Pedro', 'Solas', false, 'pass1', 'pedro@correo.com', 'B', '2022-01-18');
+INSERT INTO customers (CUSTOMER_NUMBER, NAME , LAST_NAME , SESSION , PASSWORD, EMAIL, STATUS, CREATION) VALUES ('00000004', 'Mario', 'Alberto', false, 'pass2', 'mario@correo.com', 'A', '2022-01-18');
