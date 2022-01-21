@@ -36,20 +36,4 @@ public class CustomerServiceImp implements CustomerService {
     public CustomerDto getCustomer(String customerNumber) {
         return mapper.apply(customerRepository.findById(customerNumber).orElseThrow(() -> new ResponseStatusException(HttpStatus.NO_CONTENT, "Customer not found")));
     }
-
-    @Override
-    public ResponseEntity<Void> validateCustomer(String email, String password) {
-        ResponseEntity<Void> entity;
-        Optional<Customer> customer = customerRepository.findByEmail(email);
-        if (customer.isPresent() && customer.get().getPassword().equals(password) && !customer.get().getStatus().equals("B")) {
-            customer.get().setSessionAlive(true);
-            customerRepository.save(customer.get());
-            HttpHeaders headers = new HttpHeaders();
-            headers.set("X-Authorization", UUID.randomUUID().toString());
-            entity = ResponseEntity.ok().headers(headers).build();
-        } else {
-            entity = ResponseEntity.unprocessableEntity().build();
-        }
-        return entity;
-    }
 }
